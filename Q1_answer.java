@@ -1,6 +1,7 @@
 //Kahrin Huggins - csc4330 final q1
 //Write code for a state diagram to recognize the floating-point literals, integer literals, string
 //literals and variable names of any programming language that was developed after 1990.
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
