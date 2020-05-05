@@ -1,6 +1,8 @@
 //Kahrin Huggins - csc4330 final q1
 //Write code for a state diagram to recognize the floating-point literals, integer literals, string
 //literals and variable names of any programming language that was developed after 1990.
+//Program to detect Java literals
+
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,12 +18,12 @@ public class Q1_answer{
         String inValue = sc.nextLine();
 
         //floating point literal
-        String pattern = "([0-9]*)([e|.]{1})([0-9]+)([f|F]?)"; //more specifics needed to differentiate from integer literal
+        String pattern = "([0-9]*)([e|.]{1})([/+]?)([0-9]+)([f|F]?)";
         Pattern reg = Pattern.compile(pattern);
         Matcher match = reg.matcher(inValue);
 
         //integer literal
-        String pattern2 = "([0-9]+)([^.])([^f])";
+        String pattern2 = "([0-9]+)([^.])([^f|^F])";
         Pattern reg2 = Pattern.compile(pattern2);
         Matcher match2 = reg2.matcher(inValue);
 
@@ -31,7 +33,7 @@ public class Q1_answer{
         Matcher match3 = reg3.matcher(inValue);
 
         //variable name
-        String pattern4 = "([^$|^_])([a-zA-Z]+)([_]?)([a-zA-Z]?)";
+        String pattern4 = "([^$|^_])([a-zA-Z]+)([_]?)([a-zA-Z]?)([0-9]*)";
         Pattern reg4 = Pattern.compile(pattern4);
         Matcher match4 = reg4.matcher(inValue);
 
